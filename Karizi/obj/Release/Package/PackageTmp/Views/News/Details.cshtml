@@ -1,0 +1,59 @@
+﻿@model Karizi.Models.News
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid side-bar-margin-top grey-bg">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+             <div class="sideBarHeader">ბუნებრივი ქვები:</div>
+              @foreach(var item in ViewBag.Production)
+            {
+             <a href="@Url.Action("Category","Production",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">ჩვენი პრუდუქცია</div>
+
+           @foreach(var item in ViewBag.Portfolio)
+            {
+             <a href="@Url.Action("Category","Portfolio",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">სერვისი</div>
+            @foreach(var item in ViewBag.Services)
+            {
+            <a href="@Url.Action("Category","Services",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+        </div>  <!-- col-lg-3 -->
+
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+
+            <div class="row">
+
+                <div class="news-details">
+                    <div class="news-details-img-wrapper">
+
+                        <img src="@Model.Photo" alt="" class="news-details-img" />
+
+                        <div class="news-details-text-box">
+                            <h2 class="news-details-h2">@Model.Title</h2>
+                            <p class="news-details-update-time">@Model.CreateDate.ToString("dd/mm/yyyy") | Karizi.ge</p>
+                            <p class="news-details-p">
+                                @Html.Raw(Server.HtmlDecode(Model.Text))
+                            </p>
+                        </div> <!-- news-text-box -->
+
+                    </div> <!-- news-img-wrapper -->
+
+                    
+                </div> <!-- news -->
+
+
+            </div> <!-- row -->
+
+        </div> <!-- col-lg-9 col-md-9 col-sm-8 -->
+    </div> <!-- row-->
+</div> <!-- container-fluid -->

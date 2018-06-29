@@ -1,0 +1,73 @@
+﻿@model Karizi.Models.Contact
+@{
+    ViewBag.Title = "ChangeContact";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="my-h1">კონტაქტის შეცვლა</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+                        <form action="/KariziCms/Change" method="post" enctype="multipart/form-data">
+                            <div>
+                                <input type="text" name="Phone" placeholder="ტელეფონი" class="my-text-inputs" required value="@Model.Phone" />
+                            </div>
+                            <div>
+                                <input type="text" name="Address" placeholder="მისამართი" class="my-text-inputs" required value="@Model.Address" />
+                            </div>
+                            <div>
+                                <input type="text" name="FbLink" placeholder="FacebookLink" class="my-text-inputs" required value="@Model.FbLink" />
+                            </div>
+                            <button type="submit" class="btn btn-success centered">გაგზავნა</button>
+                            <p class="text-success centered">@TempData["Success"]</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- container -->
+
+
+
+    </div>  <!-- content -->
+
+
+</div>  <!-- End content-page -->
+</div>
+
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+<!-- Right Sidebar -->
+<!-- <div class="side-bar right-bar">
+    <a href="javascript:void(0);" class="right-bar-toggle">
+        <i class="zmdi zmdi-close-circle-o"></i>
+    </a>
+    <h4 class="">Notifications</h4>
+    <div class="notification-list nicescroll">
+        <ul class="list-group list-no-border user-list">
+
+
+
+
+        </ul>
+    </div>
+</div> -->
+<!-- /Right-bar -->
+        </div>
+<!-- END wrapper -->
+</body>
+</html>
+
+

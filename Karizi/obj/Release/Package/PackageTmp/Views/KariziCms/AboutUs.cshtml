@@ -1,0 +1,77 @@
+﻿@model Karizi.Models.AboutUsmodel
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 style="text-align: center;">ჩვენს შესახებ</h1>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                   <form action="/KariziCms/AboutUs" method="post" enctype="multipart/form-data">
+
+                       <input type="file" name="Photo" placeholder="ფოტო" multiple required />
+                       @Html.ValidationSummary(true,"",new  { @class="text-danger"})
+                       @Html.TextAreaFor(model=>model.Text,new { @style = "height: 577px;width: 727px;",@name="Text" })
+                       <div>
+                       @Html.ValidationMessageFor(model => model.Text, "", new { @class="text-danger"})
+                       </div>
+                       <button type="submit" class="btn btn-success">გაგზავნა</button>
+                       <p class="text-success">@TempData["Success"]</p>
+                   </form>
+                    
+                </div>
+            </div>
+
+
+        </div> <!-- container -->
+
+
+    </div> <!-- content -->
+</div>
+<!-- End content-page -->
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+<!-- Right Sidebar -->
+<!-- <div class="side-bar right-bar">
+    <a href="javascript:void(0);" class="right-bar-toggle">
+        <i class="zmdi zmdi-close-circle-o"></i>
+    </a>
+    <h4 class="">Notifications</h4>
+    <div class="notification-list nicescroll">
+        <ul class="list-group list-no-border user-list">
+
+
+
+
+        </ul>
+    </div>
+</div> -->
+<!-- /Right-bar -->
+        </div>
+<!-- END wrapper -->
+
+
+
+
+</body>
+</html>
+
+

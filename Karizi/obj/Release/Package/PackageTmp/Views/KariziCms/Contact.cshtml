@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 style="text-align: center;">კონტაქტი</h1>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                  
+                  <form action="/KariziCms/Contact" method="post" enctype="multipart/form-data">
+                      <div>
+                          <input type="text" name="Phone" placeholder="ტელეფონი" size="30" required />
+                      </div>
+                      <div>
+                          <input type="text" name="Address" placeholder="მისამართი" size="40" required />
+                      </div>
+                      <div>
+                          <input type="text" name="FbLink" placeholder="FacebookLink" size="50" required />
+                      </div>
+                      <button type="submit" class="btn btn-success">გაგზავნა</button>
+
+                  </form>
+
+                  
+                        </div>
+                  
+                  
+                </div>
+            </div>
+
+
+        </div> <!-- container -->
+
+
+    </div> <!-- content -->
+</div>
+<!-- End content-page -->
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+<!-- Right Sidebar -->
+<!-- <div class="side-bar right-bar">
+    <a href="javascript:void(0);" class="right-bar-toggle">
+        <i class="zmdi zmdi-close-circle-o"></i>
+    </a>
+    <h4 class="">Notifications</h4>
+    <div class="notification-list nicescroll">
+        <ul class="list-group list-no-border user-list">
+
+
+
+
+        </ul>
+    </div>
+</div> -->
+<!-- /Right-bar -->
+        </div>
+<!-- END wrapper -->
+
+</body>
+</html>

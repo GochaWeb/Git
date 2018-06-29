@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Karizi.Models.News>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid side-bar-margin-top grey-bg">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+
+           <div class="sideBarHeader">ბუნებრივი ქვები:</div>
+              @foreach(var item in ViewBag.Production)
+            {
+             <a href="@Url.Action("Category","Production",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">ჩვენი პრუდუქცია</div>
+
+           @foreach(var item in ViewBag.Portfolio)
+            {
+             <a href="@Url.Action("Category","Portfolio",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">სერვისი</div>
+            @foreach(var item in ViewBag.Services)
+            {
+            <a href="@Url.Action("Category","Services",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+
+        </div>  <!-- col-lg-3 -->
+
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+
+            <div class="row">
+
+                <div class="col-lg-12" style="margin-bottom: 5px;">
+                    <h2 class="content-h2">სიახლეები კარიზში</h2>
+                </div>
+            @foreach(var item in Model)
+            {
+                <div class="news">
+                    <div class="news-img-wrapper">
+                        <img src="@item.Photo" alt="" class="news-img" />
+                    </div> <!-- news-img-wrapper -->
+
+                    <div class="news-text-box">
+                        <h2 class="news-h2">@item.Title</h2>
+                        <p class="news-update-time">@item.CreateDate.ToString("dd/mm/yyyy")</p>
+                        <p class="news-p">
+                            @Html.Raw(Server.HtmlDecode(item.Text.Substring(0, item.Text.IndexOf('.') + 1)))
+                        </p>
+                        <div class="news-a-wrapper">
+                            <a href="@Url.Action("Details","News",new { by=item.Id})" class="news-a">ვრცლად...</a>
+                        </div> <!-- news-a-wrapper -->
+                    </div> <!-- news-text-box -->
+                </div> <!-- news -->
+              }
+               
+
+            </div> <!-- row -->
+
+        </div> <!-- col-lg-9 col-md-9 col-sm-8 -->
+    </div> <!-- row-->
+</div> <!-- container-fluid -->

@@ -1,0 +1,97 @@
+﻿@model Karizi.Models.MessageModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid side-bar-margin-top grey-bg">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+
+              @foreach(var item in ViewBag.Production)
+            {
+             <a href="@Url.Action("Category","Production",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">ჩვენი პრუდუქცია</div>
+
+           @foreach(var item in ViewBag.Portfolio)
+            {
+             <a href="@Url.Action("Category","Portfolio",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+            <div class="sideBarHeader">სერვისი</div>
+            @foreach(var item in ViewBag.Services)
+            {
+            <a href="@Url.Action("Category","Services",new { by=item.Name})" class="sideBarLink">@item.Name</a>
+            }
+
+        </div>  <!-- col-lg-3 -->
+
+
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+
+            <div class="row">
+
+                <div class="col-lg-12" style="margin-bottom: 5px;">
+                    <h2 class="content-h2">დამატებითი ინფორმაციისთვის დაგვიკავშირდით:</h2>
+                </div>
+            </div>
+
+            <div class="row contact-block">
+                <div class="col-sm-6">
+                    @using (Html.BeginForm("Message", "Contact", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "contact-form" }))
+                    {
+
+
+                        <div class="form-group">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.Name, new { @type = "text", @class = "form-control", @placeholder = "თქვენი სახელი", @name = "Name" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+
+                            @Html.TextBoxFor(model => model.Email, new { @type = "text", @class = "form-control", @placeholder = "ელ-ფოსტა", @name = "Email" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Text, new { @class = "form-control my-textarea", @rows = "3", @placeholder = "მოგვწერეთ..", @name = "Text" })
+                            @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                        </div>
+                        <input type="submit" class="btn btn-default" value="გაგზავნა" />
+                        <p class="text-success">@TempData["Success"]</p>
+                    }
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">ტელეფონი</div>
+                        <div class="panel-body">@ViewBag.Contact.Phone</div>
+                       
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">მისამართი</div>
+                        <div class="panel-body">@ViewBag.Contact.Address</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <iframe class="map"
+                            frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDW5_U3APGk38hZuHny8Gg-xD3FGKvK1rc
+    &q=Beliashvili,Tbilisi" allowfullscreen></iframe>
+                </div>
+
+            </div> <!-- row -->
+
+        </div> <!-- col-lg-9 col-md-9 col-sm-8 -->
+    </div> <!-- row-->
+</div> <!-- container-fluid -->

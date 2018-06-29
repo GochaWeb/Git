@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3C991_karizi2018Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AboutUsPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BottomblockPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BottomblockText">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FbLink" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MiddleBlockPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MiddleBlockText">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="200" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PortfolioPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PortfolioId" Type="int" Nullable="false" />
+    <Property Name="PhotoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Production">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="200" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductionPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductionId" Type="int" Nullable="false" />
+    <Property Name="PhotoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="200" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServicesPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="PhotoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SliderPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_PortfolioPhoto_Portfolio">
+    <End Role="Portfolio" Type="Self.Portfolio" Multiplicity="1" />
+    <End Role="PortfolioPhoto" Type="Self.PortfolioPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Portfolio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PortfolioPhoto">
+        <PropertyRef Name="PortfolioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductionPhoto_Production">
+    <End Role="Production" Type="Self.Production" Multiplicity="1" />
+    <End Role="ProductionPhoto" Type="Self.ProductionPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Production">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductionPhoto">
+        <PropertyRef Name="ProductionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicesPhoto_Services">
+    <End Role="Services" Type="Self.Services" Multiplicity="1" />
+    <End Role="ServicesPhoto" Type="Self.ServicesPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServicesPhoto">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A3C991_karizi2018ModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AboutUsPhoto" EntityType="Self.AboutUsPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BottomblockPhoto" EntityType="Self.BottomblockPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BottomblockText" EntityType="Self.BottomblockText" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MiddleBlockPhoto" EntityType="Self.MiddleBlockPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MiddleBlockText" EntityType="Self.MiddleBlockText" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PortfolioPhoto" EntityType="Self.PortfolioPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Production" EntityType="Self.Production" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductionPhoto" EntityType="Self.ProductionPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServicesPhoto" EntityType="Self.ServicesPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SliderPhoto" EntityType="Self.SliderPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PortfolioPhoto_Portfolio" Association="Self.FK_PortfolioPhoto_Portfolio">
+      <End Role="Portfolio" EntitySet="Portfolio" />
+      <End Role="PortfolioPhoto" EntitySet="PortfolioPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductionPhoto_Production" Association="Self.FK_ProductionPhoto_Production">
+      <End Role="Production" EntitySet="Production" />
+      <End Role="ProductionPhoto" EntitySet="ProductionPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServicesPhoto_Services" Association="Self.FK_ServicesPhoto_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="ServicesPhoto" EntitySet="ServicesPhoto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

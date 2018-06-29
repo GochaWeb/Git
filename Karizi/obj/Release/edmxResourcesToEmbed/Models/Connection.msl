@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3C991_karizi2018ModelStoreContainer" CdmEntityContainer="DB_A3C991_karizi2018Entities">
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutUsPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.AboutUsPhoto">
+        <MappingFragment StoreEntitySet="AboutUsPhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BottomblockPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.BottomblockPhoto">
+        <MappingFragment StoreEntitySet="BottomblockPhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BottomblockTexts">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.BottomblockText">
+        <MappingFragment StoreEntitySet="BottomblockText">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MiddleBlockPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.MiddleBlockPhoto">
+        <MappingFragment StoreEntitySet="MiddleBlockPhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MiddleBlockTexts">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.MiddleBlockText">
+        <MappingFragment StoreEntitySet="MiddleBlockText">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Portfolios">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.Portfolio">
+        <MappingFragment StoreEntitySet="Portfolio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortfolioPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.PortfolioPhoto">
+        <MappingFragment StoreEntitySet="PortfolioPhoto">
+          <ScalarProperty Name="PhotoTitle" ColumnName="PhotoTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PortfolioId" ColumnName="PortfolioId" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productions">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.Production">
+        <MappingFragment StoreEntitySet="Production">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductionPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.ProductionPhoto">
+        <MappingFragment StoreEntitySet="ProductionPhoto">
+          <ScalarProperty Name="PhotoTitle" ColumnName="PhotoTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductionId" ColumnName="ProductionId" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicesPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.ServicesPhoto">
+        <MappingFragment StoreEntitySet="ServicesPhoto">
+          <ScalarProperty Name="PhotoTitle" ColumnName="PhotoTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SliderPhotoes">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.SliderPhoto">
+        <MappingFragment StoreEntitySet="SliderPhoto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="FbLink" ColumnName="FbLink" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="DB_A3C991_karizi2018Model.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

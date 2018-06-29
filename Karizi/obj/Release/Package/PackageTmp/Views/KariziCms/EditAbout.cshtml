@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Karizi.Models.AboutUsPhoto>
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+<link href="~/assets/css/Photo.css" rel="stylesheet" />
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="my-h1">ჩვენს შესახებ შეცვლა</h1>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+
+                        <form action="/KariziCms/AboutUs" method="post" enctype="multipart/form-data">
+                            <textarea name="Text" placeholder="ჩვენს შესახებ ტექსტი" class="my-textarea" required>@ViewBag.About.Text</textarea>
+                            <div>
+                                <button type="submit" class="btn btn-success centered">გაგზავნა</button>
+                            </div>
+                        </form>
+                        <p class="text-success centered">@TempData["Success"]</p>
+                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+
+                        <form action="/KariziCms/AddAboutPhoto" method="post" enctype="multipart/form-data">
+                            <h5 class="my-h5 align-center">ჩვენს შესახებ ფოტოები</h5>
+                            <input type="file" name="Photo" placeholder="ფოტო" multiple required class="my-file centered" />
+
+                            <div>
+                                <button type="submit" class="btn btn-success centered">გაგზავნა</button>
+
+                                <p class="text-danger centered">@TempData["Faild"]</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-3">
+                        <div class="my-block">
+                            <div class="div-wrapper" style="background-image: url(@item.Photo);">
+                                <a id="close-del" class="close-wrapper" href="/KariziCms/DelAboutPhoto/@item.Id"><i class="fa fa-window-close"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+
+        </div> <!-- container -->
+
+
+    </div> <!-- content -->
+</div>
+<!-- End content-page -->
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+<!-- Right Sidebar -->
+<!-- <div class="side-bar right-bar">
+    <a href="javascript:void(0);" class="right-bar-toggle">
+        <i class="zmdi zmdi-close-circle-o"></i>
+    </a>
+    <h4 class="">Notifications</h4>
+    <div class="notification-list nicescroll">
+        <ul class="list-group list-no-border user-list">
+
+
+
+
+        </ul>
+    </div>
+</div> -->
+<!-- /Right-bar -->
+        </div>
+<!-- END wrapper -->
+<script>
+    $(document).ready(function () {
+        $('.close-wrapper').click(function () {
+            var x = confirm('Are u sure?');
+            if (x) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

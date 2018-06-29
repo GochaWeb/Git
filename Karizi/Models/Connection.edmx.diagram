@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d8db246514f4204a01081e30b78c8eb" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.About" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.AboutUsPhoto" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.BottomblockPhoto" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.BottomblockText" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.MiddleBlockPhoto" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.MiddleBlockText" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.News" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.Portfolio" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.PortfolioPhoto" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.Production" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.ProductionPhoto" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.Service" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.ServicesPhoto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.SliderPhoto" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.sysdiagram" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_A3C991_karizi2018Model.FK_PortfolioPhoto_Portfolio" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A3C991_karizi2018Model.FK_ProductionPhoto_Production" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A3C991_karizi2018Model.FK_ServicesPhoto_Services" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.Contact" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="DB_A3C991_karizi2018Model.Login" Width="1.5" PointX="7.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

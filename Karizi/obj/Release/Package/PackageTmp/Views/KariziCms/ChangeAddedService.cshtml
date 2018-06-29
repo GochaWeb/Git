@@ -1,0 +1,136 @@
+﻿@model Karizi.Models.ServicesModel
+@{
+    ViewBag.Title = "ChangeAddedService";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+
+<link href="~/assets/css/Photo.css" rel="stylesheet" />
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="my-h1">სერვისის შეცვლა</h1>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p style="color:green">@TempData["success"]</p>
+                    <p style="color:red">@TempData["error"]</p>
+                    <p style="color:green">@ViewBag.Message</p>
+                    <p style="color:red">@ViewBag.Error</p>
+                </div>
+            </div>  <!-- End row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+                        @using (Html.BeginForm("ChangeAddedService", "KariziCms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <input type="text" style="display:none" name="Id" value="@ViewBag.Service.Id" />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.Name, new { @name = "Name", @type = "text", @placeholder = "პროდუქციის დასახელება", @class = "my-text-inputs", @Value = ViewBag.Service.Name })
+                            <div>
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <img src="@ViewBag.Service.Photo" class="my-image centered" />
+                            <h5 class="my-h5 align-center">სერვისის გარეკანი ფოტოს შეცვლა</h5>
+                            <input type="file" name="Photo" placeholder="ფოტო"  class="my-file centered" />
+                            <div>
+                                <input type="submit" value="გაგზავნა" class="btn btn-success centered" />
+                                <p class="text-success centered">@TempData["Success"]</p>
+                                <p class="text-danger centered">@TempData["ErrorP"]</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+
+                        <form action="/KariziCms/AddNewServicePhotos" method="post" enctype="multipart/form-data">
+                            <input type="text" name="Id" style="display:none" value="@ViewBag.Service.Id" />
+                            <h5 class="my-h5 align-center">სერვისის ფოტოების დამატება</h5>
+                            <input type="text" name="PhotoTitle" placeholder="ფოტოს სათაური" required class="my-text-inputs" maxlength="500" />
+                            <input type="file" name="Photo" placeholder="ფოტო" class="my-file centered" />
+                            <button type="submit" class="btn btn-success centered">გაგზავნა</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div id="SliderPhoto">
+                    @foreach (var item in ViewBag.ServicePhoto)
+                    {
+                        <div class="col-sm-4">
+                            <div class="my-block">
+                                <div class="div-wrapper" style="background-image: url(@item.Photo);">
+                                    <h5>@item.PhotoTitle</h5>
+                                    <a id="close-del" class="close-wrapper" href="/KariziCms/DelServicePhoto/@item.Id"><i class="fa fa-window-close"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                 </div>
+            </div>
+
+
+  </div> <!-- container -->
+
+
+   </div> <!-- content -->
+
+        </div>
+    <!-- End content-page -->
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+    <!-- Right Sidebar -->
+    <!-- <div class="side-bar right-bar">
+        <a href="javascript:void(0);" class="right-bar-toggle">
+            <i class="zmdi zmdi-close-circle-o"></i>
+        </a>
+        <h4 class="">Notifications</h4>
+        <div class="notification-list nicescroll">
+            <ul class="list-group list-no-border user-list">
+
+
+
+
+            </ul>
+        </div>
+    </div> -->
+    <!-- /Right-bar -->
+</div>
+<!-- END wrapper -->
+
+<script>
+    $(document).ready(function () {
+        $('.close-wrapper').click(function () {
+            var x = confirm('Are u sure?');
+            if (x) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+    });
+</script>
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
+

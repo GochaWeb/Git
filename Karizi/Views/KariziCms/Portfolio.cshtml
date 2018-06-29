@@ -1,0 +1,110 @@
+﻿@model Karizi.Models.PortfolioModel
+@{
+    ViewBag.Title = "Portfolio";
+    Layout = "~/Views/Shared/_CmsLayout.cshtml";
+}
+
+<div class="content">
+
+
+    <div class="content-page">
+        <!-- Start content -->
+
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="my-h1">ახალი ნამუშევრების დამატება</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+                        @using (Html.BeginForm("AddPortfolio", "KariziCms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(model => model.Name, new { @name = "Name", @type = "text", @placeholder = "ნამუშევრის დასახელება", @class = "my-text-inputs" })
+                            <div>
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                                <input type="file" name="Photo" placeholder="ფოტო" required class="my-file centered" />
+                                <input type="submit" value="გაგზავნა" class="btn btn-success centered" />
+                                <p class="text-success centered">@TempData["Success"]</p>
+                                <p class="text-danger centered">@TempData["ErrorP"]</p>
+                            </div>
+                        }
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="my-block">
+                        @using (Html.BeginForm("AddPortfolioPhoto", "KariziCms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <select id="addedtours" name="Id" required class="my-select">
+                                <option value="">აირჩიე ნამუშევარი</option>
+                                @foreach (var item in ViewBag.Name)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+
+                                }
+                            </select>
+                            <h5 class="my-h5 align-center">ჩემი ნამუშევრების ფოტოები</h5>
+                            <input type="text" name="PhotoTitle" placeholder="ფოტოს სათაური" required class="my-text-inputs" maxlength="500" />
+                            <input type="file" name="Photo" placeholder="ფოტო" required  class="my-file centered" />
+
+
+                            <div>
+                                <input type="submit" value="გაგზავნა" class="btn btn-success centered" />
+                                <p class="text-danger centered">@TempData["Error"]</p>
+                                <p class="text-success centered">@TempData["Photo"]</p>
+                            </div>
+                        }
+                    </div>
+                    </div>
+                </div>
+
+
+        </div> <!-- container -->
+
+
+    </div> <!-- content -->
+
+</div>
+<!-- End content-page -->
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+<!-- Right Sidebar -->
+<!-- <div class="side-bar right-bar">
+    <a href="javascript:void(0);" class="right-bar-toggle">
+        <i class="zmdi zmdi-close-circle-o"></i>
+    </a>
+    <h4 class="">Notifications</h4>
+    <div class="notification-list nicescroll">
+        <ul class="list-group list-no-border user-list">
+
+
+
+
+        </ul>
+    </div>
+</div> -->
+<!-- /Right-bar -->
+        </div>
+<!-- END wrapper -->
+
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
+
+
+

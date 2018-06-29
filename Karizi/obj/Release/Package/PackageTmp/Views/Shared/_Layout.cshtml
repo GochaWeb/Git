@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+           initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>კარიზი | მარმარილოს ნაკეთობები | მარმარილოს პროდუქტები</title>
+    <link rel="shortcut icon" href="/images/shortcutIcon.png">
+    <meta name="description" content="Karizi.ge გთავაზობთ მარმარილოს,გრანიტის,ბაზალტის,კვარცის,ტრავერტინის,კურსების გრანიტის,ნიჩბისის ქვის ნაკეთობებს და სხვა ბუნებრივი ქვის პროდუქტებს">
+    <meta name="keywords" content="მარმარილო,გრანიტი,ბაზალტი,კვარცი,ტრავერტინი,კურსების გრანიტი,ნიჩბისის ქვა,მარმარილოს ნაკეთობები,მარმარილოს პროდუქტები">
+
+
+    <meta property="og:url" content="http://tbilisi.atwebpages.com/geolab-1/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The Best Chois for Car Developers" />
+    <meta property="og:description" content="What Does Car Development Culture In Our Life?" />
+    <meta property="og:image" content="https://prod.wp.cdn.aws.wfu.edu/sites/71/2017/03/FB-f-Logo__blue_512-300x300.png" />
+    <!-- <meta property="fb:app_id"          content="" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="/libs/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="libs/html5shiv.min.js"></script>
+    <script src="libs/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Facebook share plugin -->
+
+
+
+    <div class="container-fluid marmarilo-bg">
+        <div class="row">
+            <div class="col-sm-6">
+                <a class="navbar-brand" href="/Home">
+                    <img src="/images/brownLogo.png" class="logo">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <ul class="address-ul">
+                    <li class="address-right"><i class="fa fa-mobile-phone"></i>@ViewBag.Contact.Phone</li>
+                    <li class="address-right"><i class="fa fa-facebook-official"></i><a href="@ViewBag.Contact.FbLink" target="_blank">Facebook</a></li>
+                    <li class="address-right"><i class="fa fa-map-marker"></i>@ViewBag.Contact.Address</li>
+                </ul>
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container-fluid -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+                <ul class="nav navbar-nav navbar-right" id="MyMenu">
+                    <li id="default"><a href="/Home">მთავარი</a></li>
+                    <li id="Production"><a href="/Production">პროდუქცია</a></li>
+                    <li id="Portfolio"><a href="/Portfolio">ჩვენი ნამუშევრები</a></li>
+                    <li id="Service"><a href="/Services">სერვისი</a></li>
+                    <li id="News"><a href="/News">სიახლე</a></li>
+                    <li><a href="/About">ჩვენს შესახებ</a></li>
+                    <li><a href="/Contact">კონტაქტი</a></li>
+                </ul>
+            </div> <!-- /.navbar-collapse -->
+        </div> <!-- /.container-fluid -->
+    </nav>
+    @RenderBody()
+
+    <div class="container-fluid margin-top-fluid footer">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-3 footer-cols">
+                <h3>სერვისები</h3>
+                @foreach (var item in ViewBag.Services)
+                {
+                    <a href="@Url.Action("Category","Services",new { by=item.Name})" class="footerLink">@item.Name</a>
+                }
+            </div> <!-- col-lg-3 col-md-3 col-sm-3 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-3 footer-cols">
+                <h3>ჩვენი ნამუშევრები</h3>
+                @foreach (var item in ViewBag.Portfolio)
+                {
+                    <a href="@Url.Action("Category","Portfolio",new { by=item.Name})" class="footerLink">@item.Name</a>
+                }
+            </div> <!-- col-lg-3 col-md-3 col-sm-3 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-3 footer-cols">
+                <h3>პროდუქცია</h3>
+                @foreach (var item in ViewBag.Production)
+                {
+                    <a href="@Url.Action("Category","Production",new { by=item.Name})" class="footerLink">@item.Name</a>
+                }
+            </div> <!-- col-lg-3 col-md-3 col-sm-3 -->
+
+            <div class="col-lg-3 col-md-3 col-sm-3 footer-cols">
+                <h3>კონტაქტი</h3>
+                <p class="footerLink">@ViewBag.Contact.Phone</p>
+                <p class="footerLink">@ViewBag.Contact.Address</p>
+                @*<p class="footerLink">ბელიაშვილის N 117</p>*@
+                <a href="@ViewBag.Contact.FbLink" class="footerLink" target="_blank">Facebook</a>
+            </div> <!-- col-lg-3 col-md-3 col-sm-3 -->
+
+        </div> <!-- row -->
+    </div>  <!-- container-fluid -->
+
+    <footer>
+        <p class="footer-p">
+            &copy; შ.პ.ს
+            <span class="company-name">
+                <i class="fa fa-angle-double-left"></i> karizi <i class="fa fa-angle-double-right"></i>
+            </span>
+        </p>
+    </footer>
+
+    <script src="/libs/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="/libs/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+    var controllerName = '@ViewContext.RouteData.Values["Controller"].ToString()';
+    var actionName = '@ViewContext.RouteData.Values["Action"].ToString()';
+
+    $('#MyMenu li a').filter(function () { return this.href == location.href }).parent().addClass('activeLinks').siblings().removeClass('activeLinks')
+    $('.li a').click(function () {
+        $(this).parent().addClass('activeLinks').siblings().removeClass('activeLinks')
+    });
+
+    if (controllerName == "Home" && actionName == "Index") {
+        $('#default a').addClass('activeLinks');
+    }
+    if (controllerName == "Production" && actionName == "Index") {
+        $('#Production a').addClass('activeLinks');
+    }
+
+    if (controllerName == "Portfolio" && actionName == "Index") {
+        $('#Portfolio a').addClass('activeLinks');
+    }
+    if (controllerName == "Services" && actionName == "Index") {
+        $('#Service a').addClass('activeLinks');
+    }
+
+    if (controllerName == "Production" && actionName == "Category") {
+        $('#Production a').addClass('activeLinks');
+    }
+
+    if (controllerName == "Portfolio" && actionName == "Category") {
+        $('#Portfolio a').addClass('activeLinks');
+    }
+    if (controllerName == "Services" && actionName == "Category") {
+        $('#Service a').addClass('activeLinks');
+    }
+    if (controllerName == "News" && actionName == "Details") {
+        $('#News a').addClass('activeLinks');
+    }
+
+
+
+
+
+
+
+});
+
+
+
+    </script>
+
+</body>
+</html>
